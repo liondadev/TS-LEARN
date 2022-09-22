@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exec Bubble</title>
+
+    <script>
+        window.onload = () => {
+            document.getElementById('html_forum_content').onsubmit = (e) => {
+                e.preventDefault()
+                let code = document.getElementById('content_code').value;
+                document.getElementById('html_output').innerHTML = code;
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="html_content container">
+        <form autocomplete="off" spellcheck="false" id="html_forum_content">
+            <div class="flex_code">
+                <button class="code_button">Execute</button>
+                <textarea autocomplete="off" spellcheck="false"  id="content_code" class="code_content" type="text"><p>Hey</p></textarea>
+            </div>
+        </form>
+    </div>
+
+    <div id="html_output" class="html_output container">
+        <p>Press the exec button to execute your code.</p>
+    </div>
+</body>
+</html>
